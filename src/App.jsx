@@ -1,32 +1,17 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import CountryCard from './components/CountryCard/CountryCard';
-import Header from './components/Header/Header';
-import CountriesContext from './context/CountriesContext';
-import getAllCountries from './services/countriesAPI';
+import Country from './pages/Country/Country';
+import Home from './pages/Home/Home';
 
 function App() {
-  const { allCountries, setAllCountries } = useContext(CountriesContext);
-
-  useEffect(() => {
-    async function getCountries() {
-      const COUNTRIES = await getAllCountries();
-      setAllCountries(COUNTRIES);
-    }
-    getCountries();
-  }, []);
-
   return (
-    <div className="app-container">
-      <Header />
-
-      { allCountries
-      && (
-      <div className="countries-container">
-        { allCountries.map((country) => <CountryCard key={country.name} country={country} />) }
-      </div>
-      )}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<Country />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

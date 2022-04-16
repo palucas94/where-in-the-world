@@ -6,10 +6,13 @@ import CountriesContext from '../context/CountriesContext';
 
 export default function CountriesProvider({ children }) {
   const [allCountries, setAllCountries] = useState([]);
+  const [country, setCountry] = useState();
 
   const contextValue = {
     allCountries,
     setAllCountries,
+    country,
+    setCountry,
   };
 
   return (
