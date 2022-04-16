@@ -1,0 +1,75 @@
+.country-wrapper {
+  width: 16vw;
+  height: 40vh;
+
+  border-radius: 0.3rem;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 0.75rem;
+}
+
+.country-wrapper img {
+  border-radius: 0.3rem 0.3rem 0 0;
+  border-bottom: 1px solid rgba(149, 157, 165, 0.15);
+  width: 100%;
+  height: 50%;
+}
+
+.country-name {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+  align-self: center;
+  
+  margin-top: 1rem;
+}
+.country-info {
+  padding-bottom: 1rem;
+}
+
+.country-info h4 {
+  font-family: var(--font-base);
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.01rem;
+
+  padding: 0.1rem 1rem;
+}
+
+@media screen and (max-width: 1150px) {
+  .country-wrapper {
+    width: 25vw;
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .country-wrapper {
+    width: 30vw;
+    height: 35vh;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .country-wrapper {
+    width: 80vw;
+    height: fit-content;
+  }
+
+  .country-wrapper img {
+    height: 25vh;
+  }
+
+  .country-name {
+    margin-bottom: 1rem;
+  }
+
+  .country-info h4 {
+    padding: 0.5rem 2rem;
+  }  
+}
