@@ -1,0 +1,8 @@
+.header-container {
+  font-family: var(--font-base);
+  font-weight: 800;
+  color: var(--color-very-dark-blue);
+  background: var(--color-white);
+
+  padding: 1rem 3rem;
+}
