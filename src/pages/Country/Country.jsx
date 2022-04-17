@@ -7,7 +7,7 @@ import { getCountry } from '../../services/countriesAPI';
 
 function Country() {
   const { id } = useParams();
-  const { country, setCountry } = useContext(CountriesContext);
+  const { country, setCountry, darkMode } = useContext(CountriesContext);
 
   useEffect(() => {
     async function getCountryInfo() {
@@ -18,7 +18,7 @@ function Country() {
   }, [id]);
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${darkMode ? 'bg-dark' : 'bg-light'}`}>
       <Header />
       <div className="back-button-div">
         <Link to="/" className="back-button">

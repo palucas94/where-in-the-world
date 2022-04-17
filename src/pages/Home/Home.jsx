@@ -5,7 +5,7 @@ import CountriesContext from '../../context/CountriesContext';
 import { getAllCountries } from '../../services/countriesAPI';
 
 function Home() {
-  const { allCountries, setAllCountries } = useContext(CountriesContext);
+  const { allCountries, setAllCountries, darkMode } = useContext(CountriesContext);
 
   useEffect(() => {
     async function getCountries() {
@@ -16,7 +16,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${darkMode ? 'bg-dark' : 'bg-light'}`}>
       <Header />
 
       { allCountries

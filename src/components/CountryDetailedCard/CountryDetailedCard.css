@@ -11,7 +11,7 @@
 
 .country-container img,
 .country-data-wrapper {
-  height: 45vh;
+  min-height: 45vh;
   width: 35vw;
 }
 
@@ -70,6 +70,25 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
+.back-button-div {
+  width: 75vw;
+  margin-top: 5rem;
+}
+
+.back-button {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  font-weight: 300;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+
+  padding: 0.5rem 2rem;
+}
+
+.back-button i {
+  padding-right: 0.5rem;
+}
+
 @media screen and (max-width: 950px) {
   .country-container {
     flex-direction: column;
@@ -91,6 +110,10 @@
   .country-sub-info,
   .country-borders {
     margin-top: 1.5rem;
+  }
+
+  .back-button-div {
+    width: 90vw;
   }
 }
 

@@ -3,9 +3,11 @@
 :root {
   --font-base: 'Nunito Sans', sans-serif;
 
-  --color-very-dark-blue: hsl(200, 15%, 8%);
-  --color-dark-gray: hsl(0, 0%, 52%);
-  --color-very-light-gray: hsl(0, 0%, 98%);
+  --color-dark-blue-elements: hsl(209, 23%, 22%);
+  --color-very-dark-blue-text: hsl(200, 15%, 8%);
+  --color-very-dark-blue-bg: hsl(207, 26%, 17%);
+  --color-dark-gray-input: hsl(0, 0%, 52%);
+  --color-very-light-gray-bg: hsl(0, 0%, 98%);
   --color-white: hsl(0, 0%, 100%);
 }
 
