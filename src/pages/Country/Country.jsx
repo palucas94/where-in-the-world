@@ -21,7 +21,7 @@ function Country() {
     <div className={`app-container ${darkMode ? 'bg-dark' : 'bg-light'}`}>
       <Header />
       <div className="back-button-div">
-        <Link to="/" className="back-button">
+        <Link to="/" className={`back-button ${darkMode ? 'element-dark' : 'element-light'}`}>
           <i className="fa-solid fa-arrow-left-long" />
           Back
         </Link>

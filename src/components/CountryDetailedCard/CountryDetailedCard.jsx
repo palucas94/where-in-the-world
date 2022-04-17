@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
+import CountriesContext from '../../context/CountriesContext';
 import BorderCountry from '../BorderCountry/BorderCountry';
 import './CountryDetailedCard.css';
 
 function CountryDetailedCard({ country }) {
+  const { darkMode } = useContext(CountriesContext);
+
   return (
     <div className="country-container">
-      <img src={country.flags.png} alt={country.name} />
+      <img className={`${darkMode && 'dark-border'}`} src={country.flags.png} alt={country.name} />
 
       <div className="country-data-wrapper">
-        <div className="country-data-name">
+        <div>
           <h3>{country.name}</h3>
         </div>
 
@@ -17,30 +20,30 @@ function CountryDetailedCard({ country }) {
           <div className="country-main-info">
             <p>
               { 'Native name: '}
-              { country.nativeName }
+              <span>{ country.nativeName }</span>
             </p>
             <p>
               {'Population: '}
-              {country.population}
+              <span>{ country.population }</span>
             </p>
             <p>
               {'Region: '}
-              {country.region}
+              <span>{ country.region }</span>
             </p>
             <p>
               {'Sub Region: '}
-              {country.subregion}
+              <span>{ country.subregion }</span>
             </p>
             <p>
               {'Capital: '}
-              {country.capital}
+              <span>{ country.capital }</span>
             </p>
           </div>
 
           <div className="country-sub-info">
             <p>
               {'Top Level Domain: '}
-              {country.topLevelDomain}
+              <span>{country.topLevelDomain}</span>
             </p>
             <p>
               {'Currencies: '}
@@ -57,11 +60,11 @@ function CountryDetailedCard({ country }) {
           </div>
         </div>
 
-        <div className="country-borders">
+        <div className="border-countries-container">
           <p>
             {'Border Countries: '}
           </p>
-          <div className="country-borders-list">
+          <div className="border-countries-list">
             {country.borders && (
               country.borders.map((border, i) => <BorderCountry key={`${border + i}`} code={border} />)
             )}

@@ -17,5 +17,6 @@
 }
 
 .header-container button {
+  cursor: pointer;
   border: none;
 }
