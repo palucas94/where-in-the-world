@@ -16,7 +16,7 @@ function BorderCountry({ code }) {
 
   return (
     <Link to={`/${countryName}`}>
-      <p className="border-country">{countryName}</p>
+      <span className="border-country">{countryName}</span>
     </Link>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import CountryDetailedCard from '../../components/CountryDetailedCard/CountryDetailedCard';
 import Header from '../../components/Header/Header';
 import CountriesContext from '../../context/CountriesContext';
@@ -20,6 +20,12 @@ function Country() {
   return (
     <div className="app-container">
       <Header />
+      <div className="back-button-div">
+        <Link to="/" className="back-button">
+          <i className="fa-solid fa-arrow-left-long" />
+          Back
+        </Link>
+      </div>
       {country && <CountryDetailedCard country={country} />}
     </div>
   );
