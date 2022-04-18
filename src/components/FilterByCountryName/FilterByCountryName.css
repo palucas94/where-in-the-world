@@ -1,6 +1,6 @@
 .filter-container {
   position: relative;
-  width: 25vw;
+  min-width: 25vw;
 }
 
 .filter-container input {
@@ -18,4 +18,10 @@
   position: absolute;
   left: 1rem;
   top: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+  .filter-container {
+    width: 85vw;
+  }
 }

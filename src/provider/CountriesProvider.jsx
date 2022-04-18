@@ -9,13 +9,15 @@ export default function CountriesProvider({ children }) {
   const [allCountries, setAllCountries] = useState([]);
   const [country, setCountry] = useState();
   const [darkMode, setDarkMode] = useState(false);
-  const [inputValue, setInputValue] = useState('');
+  const [nameFilter, setNameFilter] = useState('');
+  const [regionFilter, setRegionFilter] = useState('');
 
   const handleMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const inputHandler = async ({ target: { value } }) => setInputValue(value);
+  const inputHandler = ({ target: { value } }) => setNameFilter(value);
+  const selectHandler = (({ target: { value } }) => setRegionFilter(value));
 
   useEffect(() => {
     async function getCountries() {
@@ -32,8 +34,10 @@ export default function CountriesProvider({ children }) {
     setCountry,
     darkMode,
     handleMode,
-    inputValue,
+    nameFilter,
     inputHandler,
+    regionFilter,
+    selectHandler,
   };
 
   return (

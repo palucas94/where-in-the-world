@@ -1,0 +1,33 @@
+.filters-container {
+  width: 85vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2rem;
+}
+
+.countries-container {
+  width: 90vw;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 650px) {
+  .countries-container,
+  .filters-container {
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+
+  .filters-container {
+    align-items: flex-start;
+  }
+}
