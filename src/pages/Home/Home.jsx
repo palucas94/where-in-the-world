@@ -1,28 +1,22 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import CountryCard from '../../components/CountryCard/CountryCard';
+import FilterByCountryName from '../../components/FilterByCountryName/FilterByCountryName';
 import Header from '../../components/Header/Header';
 import CountriesContext from '../../context/CountriesContext';
-import { getAllCountries } from '../../services/countriesAPI';
 
 function Home() {
-  const { allCountries, setAllCountries, darkMode } = useContext(CountriesContext);
-
-  useEffect(() => {
-    async function getCountries() {
-      const COUNTRIES = await getAllCountries();
-      setAllCountries(COUNTRIES);
-    }
-    getCountries();
-  }, []);
+  const { allCountries, darkMode, inputValue } = useContext(CountriesContext);
 
   return (
     <div className={`app-container ${darkMode ? 'bg-dark' : 'bg-light'}`}>
       <Header />
-
+      <FilterByCountryName />
       { allCountries
       && (
       <div className="countries-container">
-        { allCountries.map((country) => <CountryCard key={country.name} country={country} />) }
+        { allCountries.map((country) => (
+          country.name.toLowerCase().includes(inputValue.toLowerCase())
+          && <CountryCard key={country.name} country={country} />)) }
       </div>
       )}
     </div>

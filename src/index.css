@@ -11,6 +11,12 @@
   --color-white: hsl(0, 0%, 100%);
 }
 
+::placeholder {
+  font-family: var(--font-base);
+  letter-spacing: 0.03rem;
+  font-weight: 300;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
