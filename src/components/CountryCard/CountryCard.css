@@ -1,6 +1,6 @@
 .country-wrapper {
-  width: 14vw;
-  height: 36vh;
+  width: 16vw;
+  height: 45vh;
 
   border-radius: 0.3rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -15,7 +15,7 @@
 .country-wrapper img {
   border-radius: 0.3rem 0.3rem 0 0;
   width: 100%;
-  height: 50%;
+  height: 45%;
 }
 
 .country-name {
